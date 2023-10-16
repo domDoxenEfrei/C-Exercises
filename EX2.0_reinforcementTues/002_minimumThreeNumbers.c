@@ -1,0 +1,1 @@
+//create a function float minimum_three_numbers(float n1, float n2, float n3) which return the minimum between n1, n2 and n3

@@ -1,0 +1,1 @@
+//Code a function name char* join(char** strings, int array_size, char glue) which combines an array of string into a single string gluing each string with the “glue” char

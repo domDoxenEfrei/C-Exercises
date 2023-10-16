@@ -1,0 +1,1 @@
+//Create a function int count_value_above_threshold(float* values, int n_value, float threshold) that return the number of values above or equal to the threshold.

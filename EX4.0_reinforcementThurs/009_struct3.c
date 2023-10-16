@@ -1,0 +1,1 @@
+//Create a function float average_two_sensor(SensorData s1, SensorData s2) which computes the average of two sensor data. 

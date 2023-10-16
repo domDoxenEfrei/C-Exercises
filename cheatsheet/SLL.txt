@@ -1,0 +1,79 @@
+Singly Linked List Cheat Sheet (in C)
+
+1. Node Structure:
+   struct Node {
+       int data;         // Data held by the node
+       struct Node* next; // Pointer to the next node
+   };
+
+2. Initializing a Linked List:
+   struct Node* head = NULL; // Head points to the first node (initially NULL)
+
+3. Insertion:
+   a. Insert at the beginning (prepend):
+      - Create a new node.
+      - Set the new node's 'next' to the current head.
+      - Update the head to the new node.
+
+      ```c
+      struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+      newNode->data = newData; // Assign the data to the new node
+      newNode->next = head;   // Set the 'next' of the new node
+      head = newNode;         // Update the head
+      ```
+
+   b. Insert at the end (append):
+      - Create a new node.
+      - Traverse the list until the last node.
+      - Set the 'next' of the last node to the new node.
+
+      ```c
+      struct Node* newNode = (struct Node*)malloc(sizeof(struct Node));
+      newNode->data = newData; // Assign the data to the new node
+      newNode->next = NULL;   // New node becomes the last node
+      if (head == NULL) {
+          head = newNode; // If the list is empty, new node is the head
+      } else {
+          struct Node* current = head;
+          while (current->next != NULL) {
+              current = current->next;
+          }
+          current->next = newNode; // Set 'next' of last node to the new node
+      }
+      ```
+
+4. Deletion:
+   a. Delete the first node:
+      - Update the head to point to the second node.
+
+   b. Delete a node with a specific value:
+      - Traverse the list, keeping track of the current and previous nodes.
+      - When you find the node with the desired value, update the 'next' of the previous node to skip the current node.
+
+5. Searching:
+   - Traverse the list, comparing the data of each node with the target value.
+
+6. Traversal:
+   - Loop through the list using a while loop:
+   
+   struct Node* current = head;
+   while (current != NULL) {
+       // Access current node's data
+       current = current->next;
+   }
+
+7. Length (Count):
+   - Traverse the list, counting the number of nodes encountered.
+
+8. Edge Cases:
+   - Handling an empty list (head is NULL).
+   - Checking for NULL when traversing the list to avoid null pointer errors.
+
+9. Time Complexity:
+    - Insertion and deletion at the beginning: O(1)
+    - Insertion and deletion at the end: O(n)
+    - Searching: O(n)
+    - Traversal: O(n)
+
+10. Singly Linked List vs. Doubly Linked List:
+    - In a doubly linked list, each node has a reference to both the next and previous nodes, which allows for more efficient traversal in some cases but requires more memory.
